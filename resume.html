@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cheenee Jean F. Ronquillo — Digital Marketing Specialist</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0f0e;
+    --surface: #141614;
+    --border: #232623;
+    --accent: #b5e853;
+    --accent-dim: #7aad2e;
+    --text-primary: #e8ede8;
+    --text-secondary: #8a9a8a;
+    --text-muted: #4a5a4a;
+    --tag-bg: #1a2218;
+    --tag-border: #2a3a28;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 60px 40px;
+  }
+
+  /* ── Header ── */
+  header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 40px;
+    margin-bottom: 48px;
+    position: relative;
+  }
+
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .name-block h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.8rem;
+    line-height: 1.1;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+  }
+
+  .name-block h1 em {
+    color: var(--accent);
+    font-style: italic;
+  }
+
+  .title-tag {
+    display: inline-block;
+    margin-top: 10px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent-dim);
+    border: 1px solid var(--accent-dim);
+    padding: 3px 10px;
+    border-radius: 2px;
+  }
+
+  .contact-block {
+    text-align: right;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 2;
+  }
+
+  .contact-block a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .contact-block a:hover { opacity: 0.7; }
+
+  .contact-block .loc {
+    color: var(--text-muted);
+  }
+
+  /* ── Summary ── */
+  .summary {
+    margin-bottom: 48px;
+    padding: 24px 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+  }
+
+  .summary p {
+    font-size: 0.93rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+
+  /* ── Section ── */
+  section {
+    margin-bottom: 48px;
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── Experience ── */
+  .job {
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .job:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+  }
+
+  .job-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.05rem;
+    color: var(--text-primary);
+  }
+
+  .job-period {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    padding-top: 4px;
+  }
+
+  .job-company {
+    font-size: 0.82rem;
+    color: var(--accent-dim);
+    margin-bottom: 12px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.05em;
+  }
+
+  .job ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .job ul li {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    padding: 4px 0 4px 16px;
+    position: relative;
+    line-height: 1.7;
+  }
+
+  .job ul li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* ── Skills ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .skill-group {}
+
+  .skill-group-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    background: var(--tag-bg);
+    border: 1px solid var(--tag-border);
+    color: var(--text-secondary);
+    padding: 3px 9px;
+    border-radius: 3px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .tag:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* ── Certs ── */
+  .certs-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .cert {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--accent-dim);
+    background: var(--tag-bg);
+    border: 1px solid #1e3020;
+    padding: 5px 12px;
+    border-radius: 3px;
+  }
+
+  /* ── Education ── */
+  .edu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .edu-degree {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem;
+    color: var(--text-primary);
+  }
+
+  .edu-school {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  .edu-period {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+  }
+
+  /* ── Footer ── */
+  footer {
+    margin-top: 60px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background: #fff; color: #111; }
+    :root {
+      --bg: #fff; --surface: #f5f5f5; --border: #ddd;
+      --accent: #2a6a00; --accent-dim: #3a7a10;
+      --text-primary: #111; --text-secondary: #444;
+      --text-muted: #888; --tag-bg: #f0f5ee; --tag-border: #cde0c9;
+    }
+    .container { padding: 20px; }
+    .tag:hover { border-color: var(--tag-border); color: var(--text-secondary); }
+  }
+
+  @media (max-width: 600px) {
+    .container { padding: 32px 20px; }
+    .name-block h1 { font-size: 2rem; }
+    .contact-block { text-align: left; }
+    .header-top { flex-direction: column; }
+    .skills-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <header>
+    <div class="header-top">
+      <div class="name-block">
+        <h1>Cheenee Jean<br><em>F. Ronquillo</em></h1>
+        <span class="title-tag">Digital Marketing Specialist</span>
+      </div>
+      <div class="contact-block">
+        <a href="mailto:cj.ronquillo09@gmail.com">cj.ronquillo09@gmail.com</a><br>
+        <span class="loc">Philippines</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Summary -->
+  <div class="summary">
+    <p>Results-driven Digital Marketing professional with over 10 years of cross-functional experience spanning SEO, paid media, content strategy, and marketing automation. Proven track record of building and executing data-informed campaigns, developing link-building frameworks, and driving measurable growth across diverse industries. Adept at leveraging SEMrush, Ahrefs, Google Ads, and Google Analytics to optimize performance and deliver ROI-focused outcomes.</p>
+  </div>
+
+  <!-- Experience -->
+  <section>
+    <div class="section-label">Experience</div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">SEO Specialist · Marketing Automation · Graphic Designer</div>
+        <div class="job-period">Jul 2025 – May 2026</div>
+      </div>
+      <div class="job-company">Amire Strategic Digital Marketing</div>
+      <ul>
+        <li>Executed end-to-end SEO outreach and on-page optimization, improving organic search visibility and backlink profile quality.</li>
+        <li>Produced high-quality blog content, on-page copy updates, and marketing collateral aligned with brand and SEO objectives.</li>
+        <li>Designed banner images and visual assets for blog posts and digital campaigns using Canva.</li>
+        <li>Managed link-building initiatives; monitored backlink health and disavowed low-quality links to maintain domain authority.</li>
+        <li>Developed custom Google Apps Script tools to automate data workflows and streamline team reporting processes.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">Digital Marketing Specialist</div>
+        <div class="job-period">Feb 2025 – May 2025</div>
+      </div>
+      <div class="job-company">Fullspeed Technologies Inc.</div>
+      <ul>
+        <li>Managed programmatic digital advertising campaigns through the ADMATRIX DSP platform for Japanese partner accounts.</li>
+        <li>Set up, monitored, and optimized online campaigns; delivered regular performance reports to stakeholders.</li>
+        <li>Served as primary liaison for Japanese partner accounts, ensuring campaign alignment and timely communication.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">SEO Outreach Specialist</div>
+        <div class="job-period">Oct 2022 – Feb 2024</div>
+      </div>
+      <div class="job-company">DesignCrowd</div>
+      <ul>
+        <li>Developed and executed scalable outreach strategies to earn high-authority backlinks, improving domain ratings across client portfolios.</li>
+        <li>Identified link-building opportunities through competitive gap analysis and collaborated with content teams on link-worthy assets.</li>
+        <li>Conducted multi-channel outreach campaigns via email, PR distribution, influencer partnerships, and social media platforms.</li>
+        <li>Tracked and reported on SEO campaign performance using Google Analytics, Ahrefs, and SEMrush.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">SEO Outreach Specialist</div>
+        <div class="job-period">Oct 2022 – Jul 2023</div>
+      </div>
+      <div class="job-company">Compare Broadband</div>
+      <ul>
+        <li>Built scalable outreach frameworks for high-authority backlink acquisition, strengthening domain ratings across client portfolios.</li>
+        <li>Conducted multi-channel outreach via email, PR, influencer partnerships, and social media platforms.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">Junior Paid Media Specialist — Team Lead</div>
+        <div class="job-period">Dec 2021 – Oct 2022</div>
+      </div>
+      <div class="job-company">Silverback Strategies</div>
+      <ul>
+        <li>Led team in designing and maintaining ROI-focused PPC and display campaigns across Google Ads and Bing Ads.</li>
+        <li>Conducted keyword research, audience segmentation, and bid optimization to maximize conversion rates and minimize CPA.</li>
+        <li>Crafted ad copy and executed A/B testing frameworks to continuously improve CTR and conversion performance.</li>
+        <li>Implemented conversion tracking via Google Tag Manager; maintained up-to-date knowledge of PPC platform updates.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">Core Quality Control Specialist</div>
+        <div class="job-period">Mar 2018 – Dec 2021</div>
+      </div>
+      <div class="job-company">Ripeconcepts Inc.</div>
+      <ul>
+        <li>Established quality measurement frameworks and assurance standards for consistency across digital deliverables.</li>
+        <li>Conducted systematic quality improvement testing, documented defects, and collaborated with development teams for resolution.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">Sales Analyst</div>
+        <div class="job-period">Nov 2015 – May 2017</div>
+      </div>
+      <div class="job-company">San Miguel Foods Inc.</div>
+      <ul>
+        <li>Analyzed sales data and market trends to surface insights informing sales planning and marketing strategy.</li>
+        <li>Developed sales forecasts and monitored performance metrics including reconciliation, invoicing, and order tracking via SAP.</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <!-- Skills -->
+  <section>
+    <div class="section-label">Technical Skills</div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-group-label">SEO</div>
+        <div class="tags">
+          <span class="tag">Keyword Research</span>
+          <span class="tag">On-Page SEO</span>
+          <span class="tag">Link Building</span>
+          <span class="tag">Technical Audits</span>
+          <span class="tag">Meta Optimization</span>
+          <span class="tag">Ahrefs</span>
+          <span class="tag">SEMrush</span>
+          <span class="tag">Screaming Frog</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Paid Media</div>
+        <div class="tags">
+          <span class="tag">Google Ads</span>
+          <span class="tag">Facebook Ads</span>
+          <span class="tag">LinkedIn Ads</span>
+          <span class="tag">Bing Ads</span>
+          <span class="tag">Instagram Ads</span>
+          <span class="tag">ADMATRIX DSP</span>
+          <span class="tag">CRO</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Analytics & Reporting</div>
+        <div class="tags">
+          <span class="tag">Google Analytics</span>
+          <span class="tag">Google Data Studio</span>
+          <span class="tag">Supermetrics</span>
+          <span class="tag">Google Tag Manager</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Automation & Dev</div>
+        <div class="tags">
+          <span class="tag">Google Apps Script</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">JSON</span>
+          <span class="tag">API Integration</span>
+          <span class="tag">Microsoft Macro</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Content & Design</div>
+        <div class="tags">
+          <span class="tag">Copywriting</span>
+          <span class="tag">Content Strategy</span>
+          <span class="tag">Canva</span>
+          <span class="tag">Typography</span>
+          <span class="tag">Banner Design</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Platforms & Tools</div>
+        <div class="tags">
+          <span class="tag">WordPress</span>
+          <span class="tag">Shopify</span>
+          <span class="tag">Buzzstream</span>
+          <span class="tag">Asana</span>
+          <span class="tag">Trello</span>
+          <span class="tag">SAP</span>
+          <span class="tag">Google Workspace</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section>
+    <div class="section-label">Featured Projects</div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">Client Multibrand Dashboard Automation</div>
+        <div class="job-period">Jun 2026</div>
+      </div>
+      <div class="job-company"><a href="https://github.com/cheeneejean/cheen-dashboard-automation" target="_blank" style="color:var(--accent-dim);text-decoration:none;font-family:'DM Mono',monospace;font-size:0.82rem;">github.com/cheeneejean/cheen-dashboard-automation</a></div>
+      <ul>
+        <li>Built a live Google Sheets data pipeline using Google Apps Script, replacing a manually updated spreadsheet with automated daily pulls from Shopify, Meta Ads, and Google Ads APIs across 3 brands and 4 markets (AU, NZ, US, UK).</li>
+        <li>Implemented exponential backoff retry logic for Shopify API rate limits and a timezone-aware AEST/AEDT offset handler for accurate daily reporting.</li>
+        <li>Structured a 4-tab dashboard (Platform Summary, Google Ads, Meta, Shopify) with auto-refresh every day at 6 AM AEST via time-based trigger.</li>
+        <li>Stack: Google Apps Script · Shopify API · Meta Ads API · Google Ads API · Google Sheets</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">Toggl Time Tracking API Integration</div>
+        <div class="job-period">May–Jun 2026</div>
+      </div>
+      <div class="job-company"><a href="https://github.com/cheeneejean/Australian-Client-Toggl-API-Integration-Project" target="_blank" style="color:var(--accent-dim);text-decoration:none;font-family:'DM Mono',monospace;font-size:0.82rem;">github.com/cheeneejean/Australian-Client-Toggl-API-Integration-Project</a></div>
+      <ul>
+        <li>Automated the manual Toggl CSV export process by building a Google Apps Script integration that pulls all team members' time entries via Toggl Reports API v3 into Google Sheets in real time.</li>
+        <li>Implemented full pagination via header-based cursors (X-Next-ID / X-Next-Row-Number), deduplication logic, and batch writes using a single setValues() call for timeout safety.</li>
+        <li>Added empty project highlighting, auto-refresh every 2 hours via trigger, and a custom toolbar menu for manual sync and log viewing.</li>
+        <li>Stack: Google Apps Script · Toggl Reports API v3 · Google Sheets · OAuth2</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <!-- Certifications -->
+  <section>
+    <div class="section-label">Certifications</div>
+    <div class="certs-list">
+      <span class="cert">Google My Business</span>
+      <span class="cert">Technical SEO</span>
+      <span class="cert">Google Ads Search</span>
+      <span class="cert">Google Ads Video</span>
+      <span class="cert">Shopping Ads</span>
+      <span class="cert">YouTube Music</span>
+      <span class="cert">Anthropic Certifications</span>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section>
+    <div class="section-label">Education</div>
+    <div class="edu-item">
+      <div>
+        <div class="edu-degree">Associate in Computer Technology</div>
+        <div class="edu-school">Benedicto College, Cebu City, Philippines</div>
+      </div>
+      <div class="edu-period">2011 – 2015</div>
+    </div>
+  </section>
+
+  <footer>
+    cj.ronquillo09@gmail.com &nbsp;·&nbsp; Philippines &nbsp;·&nbsp; Digital Marketing Specialist
+  </footer>
+
+</div>
+</body>
+</html>
